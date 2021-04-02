@@ -1,0 +1,129 @@
+header{
+    width: 90%;
+    margin: 0 auto;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+header .logo a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+header nav{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform:  uppercase;
+    color: #555;
+    padding: 0 15px;
+}
+
+nav ul li a:hover{
+    color: lightseagreen;
+}
+
+nav .nav-cart{
+    cursor: pointer;
+    position: relative;
+}
+
+nav .nav-cart span{
+    position: absolute;
+    color: white;
+    top: -12px;
+    right: -7px;
+    background: rgb(236, 199, 142);
+    font-size: 10px;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+header .menu,
+header .close{
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 650px ){
+    header ul{
+        position: fixed;
+        top:-100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background: white;
+        z-index: 99;
+        opacity: 0.97;
+        transition: 0.5s linear;
+    }
+
+    header .menu,
+    header .close{
+        display: block;
+    }
+
+    header .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    header ul.toggle{
+        top : 0;
+    }
+    
+}
+
+
+
+
+/* nav{
+    margin-top: 20px;
+    padding: 15px 0 0 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(230, 245, 220);
+}
+
+.logo{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+li{
+    list-style: none;
+}
+
+
+li ul{
+    display: flex;
+}
+
+li ul li{
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+li  ul li:hover{
+    color: rgb(233, 116, 87);
+} */
+

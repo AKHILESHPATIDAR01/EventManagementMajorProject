@@ -1,0 +1,93 @@
+.steps {
+	padding: 0;
+	margin: 50px auto;
+	list-style: none;
+	text-align: center;
+    color: #262a2b;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.steps li {
+	display: inline-block;
+	width: 250px;
+	/* max-width: 230px; */
+    height: 300px;
+	padding: 80px 20px 40px;
+	position: relative;
+	vertical-align: top;
+	margin: 10px;
+	min-height: 25vh;
+    background: antiquewhite;
+	border: 1px solid #252727;
+    border-radius: 20px;
+	text-align: left;
+}
+.steps li h2{
+	font-size: 114px;
+	margin: 0;
+	position: absolute;
+	opacity: 0.2;
+	top: 50px;
+	right: 10px;
+	transition: all 0.3s ease-in-out;
+}
+
+
+
+.steps li h3 {
+	font-size: 30px;
+    font-weight: 900;
+	color: #b7b7b7;
+	margin-bottom: 5px;
+}
+.steps li p {
+    text-transform: capitalize;
+	font-size: 40px;
+	line-height: 40px;
+	/* color: #252727; */
+	color: #303131;
+	margin-top: 5px;
+    /* font-weight: 500; */
+}
+
+.steps li:hover{
+    box-shadow: -11px 11px 1px -3px rgba(102,102,102,0.75);
+-webkit-box-shadow: -11px 11px 1px -3px rgba(102,102,102,0.75);
+-moz-box-shadow: -11px 11px 1px -3px rgba(102,102,102,0.75);
+}
+
+.steps li:hover h2 {
+	top: 0px;
+	opacity: 0.6;
+}
+
+.btnn{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btnnn{
+    border: 1px solid black;
+}
+
+.btnn :hover{
+    /* transform: scale(1.5); */
+	color: black;
+}
+
+.para{
+    width: 90%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    /* margin-top: 20px; */
+    margin: 20px 50px;
+    padding-top: 50px;
+    color: #b7b7b7;
+}
