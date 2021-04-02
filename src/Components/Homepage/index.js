@@ -6,7 +6,7 @@ import './homepage.css';
 function HomePage() {
     return (
         <div >
-            <p className="para">We are event organizers, our goal to make you feel enjoyable in your loved one's wedding instead of managing all the stuff.</p>
+            //<p className="para">We are event organizers, our goal to make you feel enjoyable in your loved one's wedding instead of managing all the stuff.</p>
             {/* <p>For easy we can go to all the things one by one</p> */}
             {/* <p>Please follow the steps to get best things </p>
                 <li>1. choose Garden</li>
