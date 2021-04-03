@@ -26,14 +26,16 @@ function Header( { cartitem , setCartItems } ) {
             <nav>
                 <ul className={toggle ? "toggle" : "" }>
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/steptwo'>Venues</Link></li>
+                    <li><Link to='/stepthree'>Foodstalls</Link></li>
+                    <li><Link to='/stepfour'>PhotoGraphers</Link></li>
+                    <li><Link to='/stepfive'>InvitationCard</Link></li>
                     <li className="close" onClick={menuToggle}>
                         <img src={Close} width="20" />
                     </li>
                 </ul>
                 <div className="nav-cart">
-                    <span>0</span>
+                    <span>{cartitem.length}</span>
                     <Link to="/cart">
                         <img src={Cart} width="20"/>
                     </Link>

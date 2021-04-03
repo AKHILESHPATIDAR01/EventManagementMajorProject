@@ -4,10 +4,18 @@ import './steptwo.css';
 
 import gardensdata from '../../FackData/destinationdata';
 
-function StepTwo( {cartitem , setCartItems } ) {
+function StepTwo( { venue , setVenue } ) {
 
-    const handleSelect =(e) =>{
-        console.log(e.target.key);
+    const handleSelect = Selectedvenue =>{
+        console.log(Selectedvenue.garden_name);
+        // let tempCart = [...venue];
+        // let tempItem = tempCart.find(item => item.id === Selectedvenue.id);
+
+        // if(!tempItem){
+            let newItem = Selectedvenue;
+            setVenue([newItem]);
+        // }
+        
     }
 
     return (
@@ -27,9 +35,10 @@ function StepTwo( {cartitem , setCartItems } ) {
                                 <div className="g-name">{item.garden_name}</div>
                                 <div className="g-location">{item.location}</div>
                                 <div className="g-capacity">capacity:1000</div>
+                                
                                 <div className="g-block">
                                     <div className="g-price">Price:- {item.base_price}</div>
-                                    <button className="btn" onClick={handleSelect}>Select</button>
+                                    <button className="btn" onClick={()=>{ handleSelect(item)} }>Select</button>
                                 </div>
                                 
                             </div> 
@@ -40,6 +49,14 @@ function StepTwo( {cartitem , setCartItems } ) {
             
             })}
             
+
+            {/* <div>
+                {venue.map((gd)=>{
+                    return(
+                        <h1>{gd.garden_name}</h1>
+                    );
+                })}
+            </div> */}
             <Link to='/stepone' >
                 <button>Prev</button>
             </Link>

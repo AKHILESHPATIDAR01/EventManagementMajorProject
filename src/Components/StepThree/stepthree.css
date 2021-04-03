@@ -5,13 +5,11 @@
     font-size: 13px;
 } */
 
-ul.ks-cboxtags {
+/* ul.ks-cboxtags {
     list-style: none;
     padding: 20px;
 }
-/* ul.ks-cboxtags li{
-  display: inline;
-} */
+
 ul.ks-cboxtags li label{
     width: 100%;
     display: inline-block;
@@ -75,4 +73,54 @@ ul.ks-cboxtags li input[type="checkbox"] {
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
+} */
+
+.cbox li{
+  list-style: none;
+  border: 1px solid darkcyan;
+  width: 50%;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+.foodStall{
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.foodStall h1{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.foodStall-right{
+  display: flex;
+}
+
+@media (max-width: 675px){
+  .foodStall{
+   flex-direction: column;
+   text-align: center;
+  }
+
+  .foodStall h1{
+    font-size: 25px;
+    font-weight: 200;
+  }
+
+  .foodStall-right{
+    margin-top: 20px;
+    margin-left: 30%;
+    /* justify-content: space-around; */
+  }
+
+  .foodStall-right button{
+    margin-left: 30%;
+  }
+
+  .cbox li{
+    width: 90%;
+  }
 }
