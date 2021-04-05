@@ -12,6 +12,8 @@ header .logo a{
     text-decoration: none;
     text-transform: uppercase;
     color: black;
+    font-size: 25px;
+    font-weight: 400;
 }
 
 header nav{

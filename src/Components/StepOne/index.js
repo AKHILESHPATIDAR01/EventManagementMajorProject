@@ -25,33 +25,36 @@ function StepOne( {guests , updateGuests} ) {
 
     return (
         <div>
-            <h1>StepOne</h1>
+            <h1 style={{textAlign:'center'}}>No of Guests</h1>
             {/* <div>
 
                 <label>No of Guests :-</label>
                 <input type="number" placeholder="No of Guests" />
                 <button >Submit</button>
             </div> */}
+            <div className='bnt-portion'>
+            <Link to='/' >
+                <button className='prevButtn'>Prev</button>
+            </Link>
+            <Link to='/steptwo' >
+                <button className='nextButtn'>Next</button>
+            </Link>
+            </div>
 
-            <div>
+            <div className='form-container'>
                 <form onSubmit={handleSubmit}>
                     <label>
-                    Name:
+                    No of Guest:
                     <input type="text" value={value} onChange={handleChange} />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
             </div>
             <div>
-                <h1>No of Guest : {guests} </h1>
+                <h1 style={{textAlign:'center', marginTop:'30px'}}>No of Guest : {guests} </h1>
             </div>
 
-            <Link to='/' >
-                <button>Prev</button>
-            </Link>
-            <Link to='/steptwo' >
-                <button>Next</button>
-            </Link>
+            
         </div>
     )
 }

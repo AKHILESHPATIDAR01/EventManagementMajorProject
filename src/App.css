@@ -9,7 +9,7 @@
 .container{
     margin: 0 auto;
     width: 90%;
-    border: 1px solid rosybrown;
+    /* border: 1px solid rosybrown; */
 }
 
 /* button{
@@ -19,3 +19,92 @@
     margin-bottom: 100px;
     margin-left: 80%;
 } */
+
+button{
+  padding: 10px 20px;
+  border: none;
+}
+
+button:hover{
+  background-color: antiquewhite;
+}
+
+.prevButtn{
+  margin: 10px;
+}
+
+.nextButtn{
+  margin: 10px;
+}
+
+.bnt-portion{
+  margin: 20px 0px 20px 40px;
+}
+
+
+.form-container{
+    text-align: center;
+    width: 50%;
+    /* height: 150px; */
+    padding: 50px;
+    margin: 0 auto;
+    border: 1px solid antiquewhite;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+
+form label{
+  font-size: 20px;
+  margin: 20px;
+}
+
+form label input{
+  margin-left: 20px;
+}
+
+.btn-selected{
+  width: 150px;
+  border: 1px solid coral;
+  border-radius: 20px;
+}
+
+.btn-selected:hover{
+  transform: scale(1.1);
+}
+
+
+@media  (max-width: 675px){
+  .form-container{
+    text-align: center;
+    width: 90%;
+    /* height: 150px; */
+    /* padding: 50px; */
+    margin: 0 auto;
+    border: 1px solid antiquewhite;
+    background-color: antiquewhite;
+    border-radius: 20px;
+  }
+  form label input{
+    /* margin-left: 0px; */
+    width: 90%;
+    margin-top:20px;
+    margin-bottom: 20px;
+  }
+
+  .prevButtn{
+    width: 30%;
+    margin: 10px;
+  }
+  
+  .nextButtn{
+    width: 30%;
+    margin: 10px;
+  }
+  
+  .bnt-portion{
+    width: 100%;
+    /* margin: 20px auto; */
+  }
+
+}
+

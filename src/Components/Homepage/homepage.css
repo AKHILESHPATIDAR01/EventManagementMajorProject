@@ -4,17 +4,12 @@
 	list-style: none;
 	text-align: center;
     color: #262a2b;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 .steps li {
 	display: inline-block;
-	width: 250px;
-	/* max-width: 230px; */
-    height: 300px;
-	padding: 80px 20px 40px;
+	width: 200px;
+    height: 200px;
+	padding: 20px 20px 40px;
 	position: relative;
 	vertical-align: top;
 	margin: 10px;
@@ -24,7 +19,7 @@
     border-radius: 20px;
 	text-align: left;
 }
-.steps li h2{
+/* .steps li h2{
 	font-size: 114px;
 	margin: 0;
 	position: absolute;
@@ -32,19 +27,19 @@
 	top: 50px;
 	right: 10px;
 	transition: all 0.3s ease-in-out;
-}
+} */
 
 
 
 .steps li h3 {
-	font-size: 30px;
+	font-size: 20px;
     font-weight: 900;
 	color: #b7b7b7;
 	margin-bottom: 5px;
 }
 .steps li p {
     text-transform: capitalize;
-	font-size: 40px;
+	font-size: 30px;
 	line-height: 40px;
 	/* color: #252727; */
 	color: #303131;
@@ -58,10 +53,10 @@
 -moz-box-shadow: -11px 11px 1px -3px rgba(102,102,102,0.75);
 }
 
-.steps li:hover h2 {
+/* .steps li:hover h2 {
 	top: 0px;
 	opacity: 0.6;
-}
+} */
 
 .btnn{
     text-align: center;
@@ -82,13 +77,28 @@
 .para{
     width: 90%;
 	margin: 20px auto;
-    height: 200px;
+    height: 80px;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 30px;
-    /* margin-top: 20px; */
-    
     padding-top: 50px;
     color: #b7b7b7;
+}
+
+.getStarted{
+	margin-bottom: 20px;
+	margin-left: 45%;
+}
+
+@media (max-width: 675px){
+	.getStarted{
+		margin-bottom: 20px;
+		margin-left: 28%;
+	}
+	/* .para{
+		width: 90%;
+		margin: 40px auto;
+		padding-bottom: 80px;
+	} */
 }

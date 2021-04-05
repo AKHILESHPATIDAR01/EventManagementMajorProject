@@ -4,7 +4,7 @@ import './stepthree.css';
 import foodstall from '../../FackData/foodstalldata';
 
 
-function StepThree( {cartitem , setCartItems} ) {
+function StepThree( {cartitem , setCartItems , total , setTotal} ) {
     // const [isChecked , setIsChecked] = useState(false);
 
     // const handleCheck= ()=>{
@@ -21,6 +21,7 @@ function StepThree( {cartitem , setCartItems} ) {
         if(!tempItem){
             let newItem = products;
             setCartItems( [...cartitem , newItem] );
+            setTotal(total+newItem.base_price);
         }
         else{
             alert("Product already added");

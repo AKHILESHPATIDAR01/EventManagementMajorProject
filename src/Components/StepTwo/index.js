@@ -4,27 +4,32 @@ import './steptwo.css';
 
 import gardensdata from '../../FackData/destinationdata';
 
-function StepTwo( { venue , setVenue } ) {
+function StepTwo( { venue , setVenue ,total ,setTotal } ) {
 
     const handleSelect = Selectedvenue =>{
         console.log(Selectedvenue.garden_name);
-        // let tempCart = [...venue];
-        // let tempItem = tempCart.find(item => item.id === Selectedvenue.id);
-
-        // if(!tempItem){
             let newItem = Selectedvenue;
             setVenue([newItem]);
-        // }
-        
+            setTotal(total+Selectedvenue.base_price);
     }
 
     return (
         <div className="showitems row">
-            <p className='heading'>STEP 1 : choose Garden</p>
+            {/* <p className='heading'>STEP 1 : choose Garden</p> */}
+            <h1 style={{textAlign:'center', margin:'50px'}}>choose Garden</h1>
+
+            <div className='bnt-portion'>
+                <Link to='/stepone' >
+                    <button className='prevButtn'>Prev</button>
+                </Link>
+                <Link to='/stepthree' >
+                    <button className='nextButtn'>Next</button>
+                </Link>
+            </div>
 
             {gardensdata.map((item)=>{
-
-                return (
+ 
+                return ( 
 
                     <div className="containerOne">
                         <div className="card" key={item.id}>
@@ -38,7 +43,7 @@ function StepTwo( { venue , setVenue } ) {
                                 
                                 <div className="g-block">
                                     <div className="g-price">Price:- {item.base_price}</div>
-                                    <button className="btn" onClick={()=>{ handleSelect(item)} }>Select</button>
+                                    <button className="btn-selected" onClick={()=>{ handleSelect(item)} }>Select</button>
                                 </div>
                                 
                             </div> 
@@ -57,12 +62,14 @@ function StepTwo( { venue , setVenue } ) {
                     );
                 })}
             </div> */}
-            <Link to='/stepone' >
-                <button>Prev</button>
-            </Link>
-            <Link to='/stepthree' >
-                <button>Next</button>
-            </Link>
+            <div className='bnt-portion'>
+                <Link to='/stepone' >
+                    <button className='prevButtn' >Prev</button>
+                </Link>
+                <Link to='/stepthree' >
+                    <button className='nextButtn'>Next</button>
+                </Link>
+            </div>
         </div>
     )
     

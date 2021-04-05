@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './cart.css';
 
-function Cart( { cartitem , setCartItems , venue , setVenue  } ) {
+function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,photos , setPhoto } ) {
+
+
+
     const removeFromCart = products =>{
         // console.log(products.dish_name);
         let tempCart = [...cartitem];
         let tempItem = tempCart.filter(item => item.id !== products.id);
         setCartItems(tempItem);
-
+        setTotal(total-products.base_price);
     }
 
     const removeFromVenue = products =>{
         // console.log(products.dish_name);
         let tempCart = [...venue];
         let tempItem = tempCart.filter(item => item.id !== products.id);
-        setCartItems(tempItem);
+        setVenue(tempItem);
+        setTotal(total-products.base_price);
 
     }
 
@@ -23,6 +27,35 @@ function Cart( { cartitem , setCartItems , venue , setVenue  } ) {
 
     return (
         <div className='cart-items'>
+            <div>
+                <h1>Total Amount : - {total}</h1>
+            </div>
+
+            <div>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>photographer</h1>
+                { photos.length >0 ?
+                    <ul>
+                    {venue.map((pg)=>{
+                        return(
+                            <li>
+                                <div className='cart-item-name'>
+                                    <p>{pg.studio_name}</p>
+                                </div>
+                                <div className='cart-item-details'>
+                                    <p>{pg.base_price}</p>
+                                    <button onClick={ ()=>{ removeFromVenue(pg)} }>remove</button>
+                                </div>
+                                
+                            </li>
+                        );
+                    })}
+                    </ul>
+                :
+                <p style={{textAlign : 'center' , fontSize: '20px'}}>No any Venue selected yet</p>
+                }
+            </div>
+
+
             <div>
                 <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>Venue</h1>
                 { venue.length >0 ?

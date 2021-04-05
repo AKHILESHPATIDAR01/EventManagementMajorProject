@@ -22,14 +22,14 @@ function HomePage() {
             <div className='row'>
                 <ul class="steps"> 
                     <li>
-                        <h2>01</h2>
+                        
                         <h3>Step 1</h3>
                         <p>
                             No of <br></br> guest
                         </p>  
                     </li>
                     <li>
-                        <h2>02</h2>
+                        
                         <h3>Step 2</h3>
                         <p>
                             choose Venue
@@ -37,7 +37,7 @@ function HomePage() {
                         
                     </li>
                     <li>
-                        <h2>03</h2>
+                        
                         <h3>Step 3</h3>
                         <p>
                             choose Food Stall
@@ -53,7 +53,7 @@ function HomePage() {
                         
                     </li> */}
                     <li>
-                        <h2>04</h2>
+                        
                         <h3>Step 4</h3>
                         <p>
                             choose Photo Graphers
@@ -61,7 +61,6 @@ function HomePage() {
                         
                     </li>
                     <li>
-                        <h2>05</h2>
                         <h3>Step 5</h3>
                         <p>
                             choose invitation card
@@ -78,7 +77,7 @@ function HomePage() {
                 </div>
             </Link> */}
             <Link to='/stepone' >
-                <button>GetStarted</button>
+                <button className='getStarted'>GetStarted</button>
             </Link>
         </>
     )
