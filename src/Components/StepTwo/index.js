@@ -1,17 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './steptwo.css';
 
 import gardensdata from '../../FackData/destinationdata';
 
-function StepTwo( { venue , setVenue ,total ,setTotal } ) {
+function StepTwo( { venue , setVenue ,total ,setTotal,venuePrice, setvenuePrice } ) {
 
     const handleSelect = Selectedvenue =>{
         console.log(Selectedvenue.garden_name);
+        console.log("length",venue.length);
+        let prvprice =  venue.base_price;
+        if(venue.length==0){
             let newItem = Selectedvenue;
             setVenue([newItem]);
-            setTotal(total+Selectedvenue.base_price);
+            // setTotal(total+Selectedvenue.base_price);
+            alert("Item is added");
+        }
+        else{
+            // let prvprice =  venue.base_price;
+            console.log("vanue previous price ",prvprice);
+            setTotal(total-prvprice);
+            let newItem = Selectedvenue;
+            setVenue([newItem]);
+            // setTotal(total+Selectedvenue.base_price);
+            alert("Item is added after removing prious");
+        }
     }
+    useEffect(()=>{
+        console.log(" Updated Price " ,venuePrice);
+        setTotal(venuePrice);
+        
+    },[venuePrice])
 
     return (
         <div className="showitems row">

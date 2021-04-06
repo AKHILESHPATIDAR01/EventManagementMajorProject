@@ -67,7 +67,9 @@ function App() {
   const [noOfGuests , setNoOfGuests] = useState(0);
   const [venue , setVenue] = useState([]);
   const [photos , setPhotos] = useState([]);
+  const [photosOne , setPhotosOne] = useState([]);
   const [total , setTotal] = useState(0);
+  const [venuePrice, setvenuePrice] = useState(0);
 
   return (
     <div className="container">
@@ -91,7 +93,9 @@ function App() {
                   venue={venue} 
                   setVenue={setVenue}
                   total = {total}
-                  setTotal = {setTotal}  
+                  setTotal = {setTotal}
+                  venuePrice = {venuePrice}
+                  setvenuePrice = {setvenuePrice}
                 />
             </Route>
           </Switch>
@@ -105,20 +109,32 @@ function App() {
                   />
             </Route>
           </Switch>
-          {/* <Switch>
+          <Switch>
             <Route path="/stepfour" exact>
               <StepFour 
                 photos ={photos}
                 setPhotos ={setPhotos}
                 total = {total}
                 setTotal = {setTotal}
+                photosOne ={photosOne}
+                setPhotosOne = {setPhotosOne}
               />
             </Route> 
           </Switch>
           <Switch>
-            <Route path="/stepfive" exact component={StepFive} />
+            <Route path="/stepfive">
+              <StepFive 
+                photos ={photos}
+                setPhotos ={setPhotos}
+                total = {total}
+                setTotal = {setTotal}
+                photosOne ={photosOne}
+                setPhotosOne = {setPhotosOne}
+              />
+            </Route>
+            {/* component={StepFive} /> */}
           </Switch>
-          <Switch>
+          {/* <Switch>
             <Route path="/stepsix" exact component={StepSix} />
           </Switch> */}
           <Switch>
@@ -132,6 +148,8 @@ function App() {
                   setTotal = {setTotal}
                   photos ={photos}
                   setPhoto = {setPhotos}
+                  guests = {noOfGuests} 
+                  updateGuests={setNoOfGuests}
                 />
             </Route>
           </Switch>

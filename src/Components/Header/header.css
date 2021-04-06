@@ -43,11 +43,10 @@ nav .nav-cart{
 
 nav .nav-cart span{
     position: absolute;
-    color: white;
-    top: -12px;
-    right: -7px;
-    background: rgb(236, 199, 142);
-    font-size: 10px;
+    color: #000;
+    top: -15px;
+    right: -15px;
+    font-size: 14px;
     padding: 3px 5px;
     border-radius: 50%;
     z-index: -1;
@@ -91,6 +90,13 @@ header .close{
     header ul.toggle{
         top : 0;
     }
+
+    header .logo a{
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
     
 }
 

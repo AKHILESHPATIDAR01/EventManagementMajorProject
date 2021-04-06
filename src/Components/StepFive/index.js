@@ -8,8 +8,8 @@ function StepFive() {
             <Link to='/stepfour' >
                 <button>Prev</button>
             </Link>
-            <Link to='/stepsix' >
-                <button>Next</button>
+            <Link to='/cart' >
+                <button>Cart</button>
             </Link>
         </div> 
     )

@@ -17,7 +17,7 @@ function Header( { cartitem , setCartItems } ) {
         
 
         <header>
-            <div className="menu" onClick={menuToggle}>
+            <div className="menu" onClick={menuToggle}> 
                 <img src={Menu} width="20" />
             </div>
             <div className="logo">

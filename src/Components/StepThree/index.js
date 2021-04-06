@@ -12,7 +12,7 @@ function StepThree( {cartitem , setCartItems , total , setTotal} ) {
     //     console.log(isChecked);
     // }
 
-    const addToCart = products =>{
+    const addToCart = products =>{ 
         // setCartItems(e.target.)
         console.log(products.dish_name);
         let tempCart = [...cartitem];

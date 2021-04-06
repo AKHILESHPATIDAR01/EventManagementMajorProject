@@ -2,15 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import photographers from '../../FackData/phtographer';
 
-function StepFour(total ,setTotal , photos , setPhotos) {
+function StepFour(total ,setTotal , photos , setPhotos , photosOne , setPhotosOne) {
 
     const handleSelect = SelectedPhotographer =>{
         console.log(SelectedPhotographer.studio_name);
             let newItem = SelectedPhotographer;
             console.log(newItem)
-            setPhotos([newItem]);
+            console.log(photos);
+            // setPhotos({newItem});
+            setPhotosOne([newItem]);
             setTotal(total+SelectedPhotographer.base_price);
     }
+    
 
     return (
         <div className="showitems row">
@@ -32,7 +35,7 @@ function StepFour(total ,setTotal , photos , setPhotos) {
                                 
                                 <div className="g-block">
                                     <div className="g-price">Price:- {item.base_price}</div>
-                                    <button className="btn" onClick={()=> handleSelect(item) }>Select</button>
+                                    <button className="btn" onClick={()=> {handleSelect(item)} }>Select</button>
                                 </div>
                                 
                             </div> 
@@ -54,7 +57,7 @@ function StepFour(total ,setTotal , photos , setPhotos) {
             <Link to='/stepone' >
                 <button>Prev</button>
             </Link>
-            <Link to='/stepthree' >
+            <Link to='/stepfive' >
                 <button>Next</button>
             </Link>
         </div>
