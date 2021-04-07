@@ -67,7 +67,7 @@ function App() {
   const [noOfGuests , setNoOfGuests] = useState(0);
   const [venue , setVenue] = useState([]);
   const [photos , setPhotos] = useState([]);
-  const [photosOne , setPhotosOne] = useState([]);
+  const [eCard , setECard] = useState([]);
   const [total , setTotal] = useState(0);
   const [venuePrice, setvenuePrice] = useState(0);
 
@@ -106,6 +106,8 @@ function App() {
                   setCartItems={setCartItems} 
                   total = {total}
                   setTotal = {setTotal}
+                  guests = {noOfGuests} 
+                  updateGuests={setNoOfGuests}
                   />
             </Route>
           </Switch>
@@ -116,20 +118,16 @@ function App() {
                 setPhotos ={setPhotos}
                 total = {total}
                 setTotal = {setTotal}
-                photosOne ={photosOne}
-                setPhotosOne = {setPhotosOne}
               />
             </Route> 
           </Switch>
           <Switch>
             <Route path="/stepfive">
               <StepFive 
-                photos ={photos}
-                setPhotos ={setPhotos}
+                eCard ={eCard}
+                setECard ={setECard}
                 total = {total}
                 setTotal = {setTotal}
-                photosOne ={photosOne}
-                setPhotosOne = {setPhotosOne}
               />
             </Route>
             {/* component={StepFive} /> */}
@@ -144,12 +142,14 @@ function App() {
                   setCartItems={setCartItems} 
                   venue={venue} 
                   setVenue={setVenue} 
-                  total = {total}
+                  total = {total} 
                   setTotal = {setTotal}
                   photos ={photos}
-                  setPhoto = {setPhotos}
+                  setPhotos = {setPhotos}
                   guests = {noOfGuests} 
                   updateGuests={setNoOfGuests}
+                  eCard ={eCard}
+                  setECard ={setECard}
                 />
             </Route>
           </Switch>

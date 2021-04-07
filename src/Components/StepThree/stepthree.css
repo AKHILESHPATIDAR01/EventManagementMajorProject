@@ -99,6 +99,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   display: flex;
 }
 
+.foodStall-right p{
+  margin-right: 20px;
+  position: relative;
+  top: 10px;
+}
+
 @media (max-width: 675px){
   .foodStall{
    flex-direction: column;

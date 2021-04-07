@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './steptwo.css';
 
@@ -6,36 +6,30 @@ import gardensdata from '../../FackData/destinationdata';
 
 function StepTwo( { venue , setVenue ,total ,setTotal,venuePrice, setvenuePrice } ) {
 
+    const [prvPrice , setPrvPrice] = useState(0);
+
     const handleSelect = Selectedvenue =>{
-        console.log(Selectedvenue.garden_name);
-        console.log("length",venue.length);
-        let prvprice =  venue.base_price;
-        if(venue.length==0){
+        if(venue.length==0){ 
             let newItem = Selectedvenue;
             setVenue([newItem]);
-            // setTotal(total+Selectedvenue.base_price);
+            setTotal(total+Selectedvenue.base_price);
+            setPrvPrice(newItem.base_price);
             alert("Item is added");
         }
         else{
-            // let prvprice =  venue.base_price;
-            console.log("vanue previous price ",prvprice);
-            setTotal(total-prvprice);
+            console.log("vanue previous price ",prvPrice);
+            setTotal(total-prvPrice);
             let newItem = Selectedvenue;
             setVenue([newItem]);
-            // setTotal(total+Selectedvenue.base_price);
+            setTotal(total+Selectedvenue.base_price);
             alert("Item is added after removing prious");
         }
     }
-    useEffect(()=>{
-        console.log(" Updated Price " ,venuePrice);
-        setTotal(venuePrice);
-        
-    },[venuePrice])
 
     return (
         <div className="showitems row">
             {/* <p className='heading'>STEP 1 : choose Garden</p> */}
-            <h1 style={{textAlign:'center', margin:'50px'}}>choose Garden</h1>
+            <h1 style={{textAlign:'center', margin:'50px'}}>Choose Garden</h1>
 
             <div className='bnt-portion'>
                 <Link to='/stepone' >
@@ -65,7 +59,7 @@ function StepTwo( { venue , setVenue ,total ,setTotal,venuePrice, setvenuePrice 
                                     <button className="btn-selected" onClick={()=>{ handleSelect(item)} }>Select</button>
                                 </div>
                                 
-                            </div> 
+                            </div>  
                         </div>
                     </div>
 
@@ -74,13 +68,6 @@ function StepTwo( { venue , setVenue ,total ,setTotal,venuePrice, setvenuePrice 
             })}
             
 
-            {/* <div>
-                {venue.map((gd)=>{
-                    return(
-                        <h1>{gd.garden_name}</h1>
-                    );
-                })}
-            </div> */}
             <div className='bnt-portion'>
                 <Link to='/stepone' >
                     <button className='prevButtn' >Prev</button>
@@ -92,17 +79,6 @@ function StepTwo( { venue , setVenue ,total ,setTotal,venuePrice, setvenuePrice 
         </div>
     )
     
-    // return (
-    //     <div>
-    //         <h1>StepTwo</h1>
-    //         <Link to='/stepone' >
-    //             <button>Prev</button>
-    //         </Link>
-    //         <Link to='/stepthree' >
-    //             <button>Next</button>
-    //         </Link>
-    //     </div>
-    // )
 }
 
 export default StepTwo

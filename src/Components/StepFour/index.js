@@ -1,24 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import photographers from '../../FackData/phtographer';
 
-function StepFour(total ,setTotal , photos , setPhotos , photosOne , setPhotosOne) {
+function StepFour( {total ,setTotal , photos , setPhotos} ) {
 
-    const handleSelect = SelectedPhotographer =>{
-        console.log(SelectedPhotographer.studio_name);
-            let newItem = SelectedPhotographer;
-            console.log(newItem)
-            console.log(photos);
-            // setPhotos({newItem});
-            setPhotosOne([newItem]);
-            setTotal(total+SelectedPhotographer.base_price);
+    // const handleSelect = SelectedPhotographer =>{
+    //     console.log(SelectedPhotographer.studio_name); 
+    //         let newItem = SelectedPhotographer;
+    //         console.log(newItem)
+    //         console.log(photos); 
+    //         setPhotos([newItem]);
+    //         setTotal(total+SelectedPhotographer.base_price);
+    // }
+    const [prvPrices , setPrvPrices] = useState(0);
+
+    const handleSelect = Selectedphotographer =>{
+        if(photos.length == 0){ 
+            let newItem = Selectedphotographer;
+            setPhotos([newItem]);
+            setTotal(total+Selectedphotographer.base_price);
+            setPrvPrices(newItem.base_price);
+            alert("Item is added");
+        }
+        else{
+            console.log("vanue previous price ",prvPrices);
+            setTotal(total-prvPrices);
+            let newItem = Selectedphotographer;
+            setPhotos([newItem]);
+            setTotal(total+Selectedphotographer.base_price);
+            alert("Item is added after removing prious");
+        }
     }
-    
 
     return (
         <div className="showitems row">
-            <p className='heading'>STEP 1 : choose photographer</p>
+            {/* <p className='heading'>STEP 1 : choose photographer</p> */}
 
+            <h1 style={{textAlign:'center', margin:'50px'}}>Choose Photographer</h1>
+
+            <div className='bnt-portion'>
+                <Link to='/stepthree' >
+                    <button className='prevButtn'>Prev</button>
+                </Link>
+                <Link to='/stepfive' >
+                    <button className='nextButtn'>Next</button>
+                </Link>
+            </div>
+            
             {photographers.map((item)=>{
 
                 return (
@@ -54,12 +82,14 @@ function StepFour(total ,setTotal , photos , setPhotos , photosOne , setPhotosOn
                     );
                 })}
             </div> */}
-            <Link to='/stepone' >
-                <button>Prev</button>
-            </Link>
-            <Link to='/stepfive' >
-                <button>Next</button>
-            </Link>
+            <div className='bnt-portion'>
+                <Link to='/stepthree' >
+                    <button className='prevButtn'>Prev</button>
+                </Link>
+                <Link to='/stepfive' >
+                    <button className='nextButtn'>Next</button>
+                </Link>
+            </div>
         </div>
     )
 }

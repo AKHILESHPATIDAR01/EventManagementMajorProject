@@ -43,19 +43,7 @@ function Header( { cartitem , setCartItems } ) {
             </nav>
         </header>
 
-        // <div>
-        //     <nav>
-        //             <li className="logo">Wedding Season</li>
-        //             <li>
-        //                 <ul>
-        //                     <li>Home</li>
-        //                     <li>About Us</li>
-        //                     <li>Contact Us</li>
-        //                     <li>CART</li>
-        //                 </ul>
-        //             </li>
-        //     </nav>
-        // </div>
+
     )
 }
 

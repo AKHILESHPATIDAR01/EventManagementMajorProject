@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './cart.css';
 
-function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,photos , setPhoto ,guests , updateGuests } ) {
+function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,photos , setPhotos ,guests , updateGuests ,eCard , setECard } ) {
 
     // const [clickedRemove , setCkickedRemove ] = useState(false);
 
@@ -22,18 +23,48 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
 
     }
 
-    
+    const removeFromPhotos = products =>{
+        console.log(products.studio_name);
+        let tempCart = [...photos];
+        console.log(tempCart);
+        let tempItem = tempCart.filter(item => item.id !== products.id);
+        setPhotos(tempItem);
+        setTotal(total-products.base_price);
+
+    }
+
+    const removeFromECard = products =>{
+        console.log(products.studio_name);
+        let tempCart = [...photos];
+        console.log(tempCart);
+        let tempItem = tempCart.filter(item => item.id !== products.id);
+        setECard(tempItem);
+        setTotal(total-products.base_price);
+
+    }
+
+
     return (
         <div className='cart-items'>
-            <div>
+
+            <h1 style={{textAlign:'center', margin:'20px'}}>Selected Items</h1>
+            <p style={{textAlign:'center'}}>Total : {total}</p>
+            {/* <div>
                 <h1>Total Amount : {total}</h1>
+            </div> */}
+
+            <div className='bnt-portion'>
+                <Link to='/stepfive' >
+                    <button className='prevButtn'>Prev</button>
+                </Link>
+                <Link to='/' >
+                    <button className='nextButtn'>Home</button>
+                </Link>
             </div>
 
-            
-
 
             <div>
-                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>Venue</h1>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase', textDecoration : 'underline' }}>Venue</h1>
                 { venue.length >0 ?
                     <ul>
                     {venue.map((gd)=>{ 
@@ -57,7 +88,7 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
             </div>
 
             <div>
-                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>FoodItems</h1>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>FoodItems</h1>
                 {cartitem.length > 0 ?
                 <ul >
                 { cartitem.map((cartItems)=>{
@@ -83,10 +114,10 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
             </div>
 
             <div>
-                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>photographer</h1>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>photographer</h1>
                 { photos.length >0 ?
                     <ul>
-                    {venue.map((pg)=>{
+                    {photos.map((pg)=>{
                         return(
                             <li>
                                 <div className='cart-item-name'>
@@ -94,7 +125,7 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
                                 </div>
                                 <div className='cart-item-details'>
                                     <p>{pg.base_price}</p>
-                                    <button onClick={ ()=>{ removeFromVenue(pg)} }>remove</button>
+                                    <button onClick={ ()=>{ removeFromPhotos(pg)} }>remove</button>
                                 </div>
                                 
                             </li>
@@ -107,18 +138,18 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
             </div>
 
             <div>
-                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase'}}>invitation Card</h1>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>invitation Card</h1>
                 { photos.length >0 ?
                     <ul>
-                    {venue.map((pg)=>{
+                    {eCard.map((cd)=>{
                         return(
                             <li>
                                 <div className='cart-item-name'>
-                                    <p>{pg.studio_name}</p>
+                                    <p>{cd.card_name}</p>
                                 </div>
                                 <div className='cart-item-details'>
-                                    <p>{pg.base_price}</p>
-                                    <button onClick={ ()=>{ removeFromVenue(pg)} }>remove</button>
+                                    <p>{cd.base_price}</p>
+                                    <button onClick={ ()=>{ removeFromPhotos(cd)} }>remove</button>
                                 </div>
                                 
                             </li>
@@ -128,6 +159,15 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
                 :
                 <p style={{textAlign : 'center' , fontSize: '20px'}}>No any Venue selected yet</p>
                 }
+            </div>
+
+            <div className='bnt-portion'>
+                <Link to='/stepfive' >
+                    <button className='prevButtn'>Prev</button>
+                </Link>
+                <Link to='/' >
+                    <button className='nextButtn'>Home</button>
+                </Link>
             </div>
         </div>
     )
