@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import invitation from '../../FackData/invitation'
+import './stepfive.css';
 
 function StepFive( {total ,setTotal , eCard , setECard} ) {
 
@@ -31,18 +32,18 @@ function StepFive( {total ,setTotal , eCard , setECard} ) {
 
                 return (
 
-                    <div className="containerOne">
+                    <div className="containerTwo">
                         <div className="card" key={item.id}>
-                            <div className="imgPortion">
+                            <div className="imgPortionTwo">
                                 <img src={item.img} />
                             </div>
-                            <div className="details">
-                                <div className="g-name">{item.card_name}</div>
+                            <div className="detailsTwo">
+                                <div className="g-nameTwo">{item.card_name}</div>
                                 {/* <div className="g-location">{item.location}</div> */}
                                 {/* <div className="g-capacity">capacity:1000</div> */}
                                 
-                                <div className="g-block">
-                                    <div className="g-price">Price:- {item.base_price}</div>
+                                <div className="g-blockTwo">
+                                    <div className="g-priceTwo">Price:- {item.base_price}</div>
                                     <button className="btn" onClick={()=> {handleSelect(item)} }>Select</button>
                                 </div>
                                 

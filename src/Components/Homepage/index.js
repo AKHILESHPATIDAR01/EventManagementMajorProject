@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './homepage.css';
 
 
-function HomePage() {
+function HomePage() { 
     return (
         <>
             {/* <p className="para">We are event organizers, our goal to make you feel enjoyable in your loved one's wedding instead of managing all the stuff.</p> */}

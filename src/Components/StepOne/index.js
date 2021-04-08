@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function StepOne( {guests , updateGuests} ) {
-    const  [value , setValue] = useState(0);
+    const  [value , setValue] = useState();
 
     const handleChange = (e)=>{
         if(e.target.value <= 2000){
@@ -47,7 +47,7 @@ function StepOne( {guests , updateGuests} ) {
                     No of Guest:
                     <input type="text" value={value} onChange={handleChange} />
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input className='btnn' type="submit" value="Submit" />
                 </form>
             </div>
             <div>

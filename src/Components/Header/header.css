@@ -6,6 +6,7 @@ header{
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+    border-bottom: 1px solid black;
 }
 
 header .logo a{
@@ -28,6 +29,7 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     text-transform:  uppercase;
+    font-weight: 600;
     color: #555;
     padding: 0 15px;
 }

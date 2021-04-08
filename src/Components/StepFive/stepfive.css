@@ -1,110 +1,119 @@
-.containerOne .card{
-    width: 90%;
-    /* height: 350px; */
+.containerTwo .card{
+    width: 50%;
+    height: 350px;
     margin: 100px auto;
     display: flex;
     /* border: 1px solid coral; */
     border: 1px solid rgb(67, 236, 228);
     border-radius: 50px;
     /* background-color: antiquewhite; */
-    background: rgb(149, 247, 242);
+    background: rgb(149, 247, 242); 
 }
 
-.imgPortion{
-    width: 30%;
+.imgPortionTwo{
+    width: 60%;
     padding: 20px;
 }
-.imgPortion img{
+.imgPortionTwo img{
     width: 100%;
-    height: 150px;
+    height: 300px;
     border-radius: 50px;
 }
-.details{
-    width: 80%;
-    margin-left: 100px;
-    padding: 20px;
+.detailsTwo{
+    width: 40%;
+    margin-top: 50px;
+    /* font-size: 20px; */
+    /* margin-left: 100px; */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
 }
-.g-name{
+.g-nameTwo{
     width: 90%;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;
     text-transform: uppercase;
     line-height: 50px;
     
 }
 
-.g-location{
+.g-locationTwo{
     font-size: 20px;    
     text-transform: capitalize;
     line-height: 30px;
 
 }
-.g-price{
+.g-priceTwo{
     font-size: 20px;
     text-transform: capitalize;
+    margin-top: 30px;
     /* line-height: 50px; */
 
 }
-.g-capacity{
-    font-size: 15px;
-    line-height: 50px;
-}
 
-.g-block{
+.g-blockTwo{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .btn{
+    margin-top: 50px;
     padding: 5px;
-    width: 20%;
+    width: 80%;
     font-size: 15px;
     font-weight: 600;
     border: 1px solid black;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 @media (max-width: 675px){
-    .container .card{
-        /* width: 90%;
-        margin: 100px auto; */
+    .containerTwo .card{
+        width: 90%;
+        margin: 100px auto;
         /* display: flex; */
         flex-direction: column;
-        /* height: 700px; */
+        height: 600px;
         /* border: 1px solid coral;
         border-radius: 50px; */
     }
-    .imgPortion{
+    .imgPortionTwo{
         width: 100%;
         padding: 15px;
     }
-    .details{
+    .detailsTwo{
         width: 100%;
         margin-left: 0px;
-        padding: 20px 40px;
+        padding: 20px;
+        text-align: center;
     }
-    .imgPortion img{
+    .imgPortionTwo img{
         width: 100%;
         border-radius: 50px;
     }
-    .g-name{
+    .g-nameTwo{
         width: 90%;
         font-size: 20px;
+        /* margin-top: 20px; */
         line-height: 30px;
     }
-    .g-block{
+    .g-blockTwo{
         flex-direction: column;
         /* justify-content: space-around; */
     }
     .btn{
+
         padding: 5px;
-        width: 20%;
+        width: 60%;
+        margin: 10px auto;
         font-size: 15px;
         font-weight: 600;
         border: 1px solid black;
         border-radius: 20px;
+        text-align: center;
     }
-    .g-location{
+    .g-locationTwo{
         font-size: 18px;
         letter-spacing: 1px;
         /* border-bottom: 1px solid black; */
@@ -113,13 +122,13 @@
         line-height: 30px;
     
     }
-    .g-price{
+    .g-priceTwo{
         font-size: 20px;
         text-transform: capitalize;
         /* line-height: 50px; */
     
     }
-    .g-capacity{
+    .g-capacityTwo{
         font-size: 15px;
         line-height: 50px;
     }

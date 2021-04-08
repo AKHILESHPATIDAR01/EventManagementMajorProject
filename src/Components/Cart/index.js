@@ -149,7 +149,7 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
                                 </div>
                                 <div className='cart-item-details'>
                                     <p>{cd.base_price}</p>
-                                    <button onClick={ ()=>{ removeFromPhotos(cd)} }>remove</button>
+                                    <button onClick={ ()=>{ removeFromECard(cd)} }>remove</button>
                                 </div>
                                 
                             </li>

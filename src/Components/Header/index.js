@@ -21,7 +21,7 @@ function Header( { cartitem , setCartItems } ) {
                 <img src={Menu} width="20" />
             </div>
             <div className="logo">
-                <h1><Link to='/' >Event successful</Link></h1>
+                <h1><Link to='/' >Successful Event</Link></h1>
             </div>
             <nav>
                 <ul className={toggle ? "toggle" : "" }>
