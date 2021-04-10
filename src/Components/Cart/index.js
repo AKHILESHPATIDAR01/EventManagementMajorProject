@@ -113,29 +113,7 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
                 } 
             </div>
 
-            <div>
-                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>photographer</h1>
-                { photos.length >0 ?
-                    <ul>
-                    {photos.map((pg)=>{
-                        return(
-                            <li>
-                                <div className='cart-item-name'>
-                                    <p>{pg.studio_name}</p>
-                                </div>
-                                <div className='cart-item-details'>
-                                    <p>{pg.base_price}</p>
-                                    <button onClick={ ()=>{ removeFromPhotos(pg)} }>remove</button>
-                                </div>
-                                
-                            </li>
-                        );
-                    })}
-                    </ul>
-                :
-                <p style={{textAlign : 'center' , fontSize: '20px'}}>No any Venue selected yet</p>
-                }
-            </div>
+            
 
             <div>
                 <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>invitation Card</h1>
@@ -157,7 +135,31 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
                     })}
                     </ul>
                 :
-                <p style={{textAlign : 'center' , fontSize: '20px'}}>No any Venue selected yet</p>
+                <p style={{textAlign : 'center' , fontSize: '20px'}}>No any E-Card selected yet</p>
+                }
+            </div>
+
+            <div>
+                <h1 style={{textAlign : 'center' , fontSize: '30px' , margin: '30px 0' , textTransform : 'uppercase' , textDecoration : 'underline'}}>photographer</h1>
+                { photos.length >0 ?
+                    <ul>
+                    {photos.map((pg)=>{
+                        return(
+                            <li>
+                                <div className='cart-item-name'>
+                                    <p>{pg.studio_name}</p>
+                                </div>
+                                <div className='cart-item-details'>
+                                    <p>{pg.base_price}</p>
+                                    <button onClick={ ()=>{ removeFromPhotos(pg)} }>remove</button>
+                                </div>
+                                
+                            </li>
+                        );
+                    })}
+                    </ul>
+                :
+                <p style={{textAlign : 'center' , fontSize: '20px'}}>No any photographer selected yet</p>
                 }
             </div>
 
