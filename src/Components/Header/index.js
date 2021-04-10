@@ -26,6 +26,7 @@ function Header( { cartitem , setCartItems } ) {
             <nav>
                 <ul className={toggle ? "toggle" : "" }>
                     <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/stepone'>Guests</Link></li>
                     <li><Link to='/steptwo'>Venues</Link></li>
                     <li><Link to='/stepthree'>Foodstalls</Link></li>
                     <li><Link to='/stepfour'>PhotoGraphers</Link></li>

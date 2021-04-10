@@ -11,7 +11,7 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
         let tempCart = [...cartitem];
         let tempItem = tempCart.filter(item => item.id !== products.id);
         setCartItems(tempItem);
-        setTotal(total-products.base_price);
+        setTotal(total-products.base_price*guests);
     }
 
     const removeFromVenue = products =>{
@@ -34,8 +34,8 @@ function Cart( { cartitem , setCartItems , venue , setVenue , total , setTotal ,
     }
 
     const removeFromECard = products =>{
-        console.log(products.studio_name);
-        let tempCart = [...photos];
+        // console.log(products.studio_name);
+        let tempCart = [...eCard];
         console.log(tempCart);
         let tempItem = tempCart.filter(item => item.id !== products.id);
         setECard(tempItem);
